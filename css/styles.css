@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  align-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.slider {
+  max-width: 80%;
+  border: 2px solid black;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-line {
+  display: flex;
+  transition: all ease 0.5s;
+}
+
+.card {
+  max-width: 50%;
+  height: 300px;
+}
+
+.buttons {
+  width: 60px;
+  height: 30px;
+  display: block;
+  position: absolute;
+  top: 45%;
+  z-index: 100;
+}
+
+.buttons:first-child {
+  left: 0;
+}
+
+.buttons:last-child {
+  right: 0;
+}

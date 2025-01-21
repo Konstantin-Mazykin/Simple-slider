@@ -6,11 +6,16 @@ const buttonPrev = document.querySelector(".button-prev");
 let count = 0;
 let positionX = null;
 
-let width = document.querySelector(".slider").offsetWidth;
-buttonPrev.style.display = "none";
+let width;
+let sliderWindowWidth;
+let quantityOfSlides;
+
+buttonPrev.style.visibility = "hidden";
 
 function init() {
-  width = document.querySelector(".slider").offsetWidth;
+  width = document.querySelector(".card").offsetWidth;
+  sliderWindowWidth = document.querySelector(".slider-line").offsetWidth;
+  quantityOfSlides = Math.round(sliderWindowWidth / width);
   rollSlidder();
 }
 
@@ -19,24 +24,25 @@ function rollSlidder() {
 }
 
 function rollSlidderNext() {
-  if (count == sliderItems.length - 1) return;
+  if (count == sliderItems.length - quantityOfSlides) return;
   count++;
   rollSlidder();
-  if (count == sliderItems.length - 1) {
-    buttonNext.style.display = "none";
+  if (count == sliderItems.length - quantityOfSlides) {
+    buttonNext.style.visibility = "hidden";
     return;
   }
-  buttonPrev.style.display = "block";
+  buttonPrev.style.visibility = "visible";
 }
 
 function rollSlidderPrev() {
+  if (count == 0) return;
   count--;
   rollSlidder();
   if (count == 0) {
-    buttonPrev.style.display = "none";
+    buttonPrev.style.visibility = "hidden";
     return;
   }
-  buttonNext.style.display = "block";
+  buttonNext.style.visibility = "visible";
 }
 
 function handleTouchStart(event) {
@@ -55,6 +61,8 @@ function handleTouchMove(event) {
   }
   positionX = null;
 }
+
+init();
 
 window.addEventListener("resize", init);
 
