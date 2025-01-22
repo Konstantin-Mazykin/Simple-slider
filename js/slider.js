@@ -20,7 +20,7 @@ function init() {
 }
 
 function rollSlidder() {
-  sliderLine.style.transform = "translate(-" + count * width + "px)";
+  sliderLine.style.transform = `translate(${-count * width}px)`;
 }
 
 function rollSlidderNext() {
