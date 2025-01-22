@@ -14,7 +14,7 @@ buttonPrev.style.visibility = "hidden";
 
 function init() {
   width = document.querySelector(".card").offsetWidth;
-  sliderWindowWidth = document.querySelector(".slider-line").offsetWidth;
+  sliderWindowWidth = document.querySelector(".slider").offsetWidth;
   quantityOfSlides = Math.round(sliderWindowWidth / width);
   rollSlidder();
 }
