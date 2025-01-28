@@ -17,7 +17,6 @@
 
 .slider-line {
   display: flex;
-  transition: all ease 0.5s;
 }
 
 .card {

@@ -10,6 +10,7 @@ let width;
 let sliderWindowWidth;
 let quantityOfSlides;
 
+sliderLine.style.transition = "all ease 0.5s";
 buttonPrev.style.visibility = "hidden";
 
 function init() {
